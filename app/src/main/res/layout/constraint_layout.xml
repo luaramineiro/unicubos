@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true">
+
+
+    <TextView
+        android:id="@+id/titleTXT"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
+
+    <EditText
+        android:id="@+id/weightEDTX"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/your_weight"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+    <EditText
+        android:id="@+id/heightEDTX"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/your_height"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+</ConstraintLayout>
