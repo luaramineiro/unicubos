@@ -2,7 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
@@ -23,25 +23,10 @@
         android:textSize="32sp" />
 
     <EditText
-        android:id="@+id/weightEDTX"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titleTXT"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20sp"
-        android:backgroundTint="@android:color/white"
-        android:hint="@string/your_weight"
-        android:inputType="numberDecimal"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/white" />
-
-    <EditText
         android:id="@+id/heightEDTX"
         android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/weightEDTX"
+        android:layout_below="@id/titleTXT"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="20sp"
@@ -52,11 +37,37 @@
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white" />
 
+    <ImageView
+        android:id="@+id/lineIMGV"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heightEDTX"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_line_white" />
+
+    <EditText
+        android:id="@+id/weightEDTX"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lineIMGV"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/your_weight"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
+
+
     <Button
         android:id="@+id/calculateBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/heightEDTX"
+        android:layout_below="@id/weightEDTX"
         android:layout_alignLeft="@id/heightEDTX"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
@@ -72,8 +83,9 @@
         android:id="@id/clearBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/heightEDTX"
+        android:layout_below="@id/weightEDTX"
         android:layout_alignEnd="@id/heightEDTX"
+        android:layout_alignParentStart="@id/heightEDTX"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10sp"
         android:layout_marginTop="20sp"
