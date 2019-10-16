@@ -6,4 +6,8 @@
 
     <solid android:color="@color/colorSecundary" />
 
+    <padding
+        android:bottom="10dp"
+        android:top="10dp" />
+
 </shape>
