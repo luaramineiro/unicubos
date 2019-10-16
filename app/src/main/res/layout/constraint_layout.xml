@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
@@ -10,7 +11,7 @@
     android:orientation="vertical">
 
 
-   <TextView
+    <TextView
         android:id="@+id/titleTXT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +19,80 @@
         android:text="@string/title"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.200" />
+
+    <EditText
+        android:id="@+id/heightEDTX"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/your_height"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTXT" />
+
+    <TextView
+        android:id="@+id/lineTXT"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heightEDTX"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_line_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightEDTX" />
+
+
+    <EditText
+        android:id="@+id/weightEDTX"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        android:hint="@string/your_weight"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineTXT" />
+
+    <Button
+        android:id="@id/clearBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_button_purple_light"
+        android:text="@string/clear"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/lineTXT"
+        app:layout_constraintTop_toBottomOf="@+id/weightEDTX" />
+
+    <Button
+        android:id="@+id/calculateBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_button_purple"
+        android:text="@string/calculate"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/lineTXT"
+        app:layout_constraintTop_toBottomOf="@+id/weightEDTX" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -37,14 +37,14 @@
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white" />
 
-    <ImageView
+    <TextView
         android:id="@+id/lineIMGV"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/heightEDTX"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/shape_line_white" />
 
     <EditText
@@ -54,7 +54,6 @@
         android:layout_below="@id/lineIMGV"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="20sp"
         android:backgroundTint="@android:color/white"
         android:hint="@string/your_weight"
         android:inputType="numberDecimal"
