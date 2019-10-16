@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintVertical_bias="0.100" />
 
     <EditText
         android:id="@+id/heightEDTX"
@@ -69,6 +69,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineTXT" />
 
+    <TextView
+        android:id="@+id/resultTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weightEDTX" />
+
     <Button
         android:id="@id/clearBTN"
         android:layout_width="wrap_content"
@@ -80,7 +92,7 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/lineTXT"
-        app:layout_constraintTop_toBottomOf="@+id/weightEDTX" />
+        app:layout_constraintTop_toBottomOf="@+id/resultTXT" />
 
     <Button
         android:id="@+id/calculateBTN"
@@ -93,6 +105,6 @@
         android:textColor="@android:color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/lineTXT"
-        app:layout_constraintTop_toBottomOf="@+id/weightEDTX" />
+        app:layout_constraintTop_toBottomOf="@+id/resultTXT" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
