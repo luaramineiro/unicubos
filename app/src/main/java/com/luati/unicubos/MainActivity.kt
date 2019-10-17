@@ -16,29 +16,29 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.constraint_layout)
-
         resultTXT.visibility = View.INVISIBLE
+    }
 
-        calculateBTN.setOnClickListener {
+    private fun initListener() {
+        calculateBTN?.setOnClickListener() {
 
-            var heigth = heightEDTX.text.toString()
-            var weight = weightEDTX.text.toString()
-
-            if (isNotNullOrNotEmpty(heigth)) {
+            //TODO: tratar erro com ponto (máscara)
+            if (isNotNullOrNotEmpty(heightEDTX?.text.toString())) {
                 Toast.makeText(this, "Digite um valor válido de altura!", Toast.LENGTH_LONG)
                     .show()
-            } else if (isNotNullOrNotEmpty(weight)) {
+            } else if (isNotNullOrNotEmpty(weightEDTX?.text.toString())) {
                 Toast.makeText(this, "Digite um valor válido de peso!", Toast.LENGTH_LONG)
                     .show()
             } else {
-                var imc = weight.toFloat() / (heigth.toFloat() * heigth.toFloat())
-
                 resultTXT.visibility = View.VISIBLE
 
                 var numberFormat = DecimalFormat("#.##")
                 numberFormat.roundingMode = RoundingMode.CEILING
 
-                resultTXT.text = "Seu IMC é igual a " + numberFormat.format(imc) + "\n" + isAllRight(imc)
+                var imc = getValues()
+
+                resultTXT.text =
+                    "Seu IMC é igual a " + numberFormat.format(imc) + "\n" + isAllRight(imc)
             }
 
             val inputManager: InputMethodManager =
@@ -56,19 +56,26 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun isNotNullOrNotEmpty(str: String?): Boolean {
+    private fun isNotNullOrNotEmpty(str: String?): Boolean {
         if (str != null && str.isNotEmpty() && str.toFloat() > 0)
             return false
         return true
     }
 
-    fun isAllRight(number: Float): String {
-        if (number <= 18.5) {
-            return "Você está abaixo do peso ideal =("
-        } else if (number >= 18.6 && number <= 24.9) {
-            return "Parabéns! Você está com o peso ideal! \\o/"
-        } else {
-            return "Você está acima do peso ideal =("
+    private fun isAllRight(number: Float): String {
+        return when(number) {
+            in 0f..18.5f -> "Você está abaixo do peso ideal =("
+            in 18.6f..24.9f -> "Parabéns! Você está com o peso ideal! \\o/"
+            else -> "Você está acima do peso ideal =("
         }
     }
+
+    private fun getValues(): Float {
+        var weight: Float = weightEDTX?.text.toString()?.toFloat() ?: 1f
+        var height: Float = heightEDTX?.text.toString()?.toFloat() ?: 0f
+
+        return calculateIMC(weight, height)
+    }
+
+    private fun calculateIMC(weigth: Float, height: Float) = weigth / (height * height)
 }
