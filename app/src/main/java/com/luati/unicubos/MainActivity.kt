@@ -17,16 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.constraint_layout)
         resultTXT.visibility = View.INVISIBLE
+        initListener()
     }
 
     private fun initListener() {
         calculateBTN?.setOnClickListener() {
 
-            //TODO: tratar erro com ponto (máscara)
-            if (isNotNullOrNotEmpty(heightEDTX?.text.toString())) {
+            if (heightEDTX?.text.toString().trim() == "." || isNotNullOrNotEmpty(heightEDTX?.text.toString())) {
                 Toast.makeText(this, "Digite um valor válido de altura!", Toast.LENGTH_LONG)
                     .show()
-            } else if (isNotNullOrNotEmpty(weightEDTX?.text.toString())) {
+            } else if (weightEDTX?.text.toString().trim() == "." || isNotNullOrNotEmpty(weightEDTX?.text.toString())) {
                 Toast.makeText(this, "Digite um valor válido de peso!", Toast.LENGTH_LONG)
                     .show()
             } else {
