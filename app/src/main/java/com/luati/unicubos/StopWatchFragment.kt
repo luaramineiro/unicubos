@@ -55,7 +55,7 @@ class StopWatchFragment : Fragment() {
     }
 
     private fun initCountDownTimer(millisInFuture: Long): CountDownTimer {
-        return object : CountDownTimer(millisInFuture, 950) {
+        return object : CountDownTimer(millisInFuture, 1000) {
 
             override fun onTick(millisUntilFinished: Long) {
                 val sumTime = millisUntilFinished / 1000
@@ -100,5 +100,5 @@ class StopWatchFragment : Fragment() {
         }
     }
 
-    private fun formatNumberToString(number : Int): String = if (number < 10) "0" + number.toString() else number.toString()
+    private fun formatNumberToString(number : Int): String = if (number < 10) "0 {$number.toString()}" else number.toString()
 }
