@@ -3,7 +3,6 @@ package com.luati.unicubos
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.google.android.material.appbar.AppBarLayout
 
 class MainPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -11,8 +10,10 @@ class MainPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
     private val titleList : ArrayList<String> = arrayListOf<String>()
 
     init {
+        titleList.add("Timezone")
         titleList.add("Timer")
         titleList.add("Stopwatch")
+        fragmentList.add(TimeZoneFragment())
         fragmentList.add(TimerFragment())
         fragmentList.add(StopWatchFragment())
     }

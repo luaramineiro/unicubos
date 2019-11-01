@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/countryTXT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="24dp"
+        android:text="Brasil"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        android:background="#e6ceff"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/timezoneTXT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="18dp"
+        android:text="GMT -3"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        android:background="#e6ceff"
+        android:paddingLeft="16dp"
+        android:paddingBottom="16dp"/>
+
+</LinearLayout>
